@@ -1,14 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "jr-trapezoid"
 version = "0.0.1"
-authors = [
-    {name = "Jørgen Riseth", email="jnriseth@gmail.com"}
-]
 dependencies = [
     "numpy"
 ]
-
-
-[build-system]
-requires = ["setuptools", "setuptools-scm"]
-build-backend = "setuptools.build_meta"
+requires-python = ">=3.7"
+authors = [
+    {name = "Jørgen Riseth", email="jnriseth@gmail.com"}
+]
+description = "Numerical 1D integration by trapzeoid for the purpose of learning conda packaging."
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3"
+]

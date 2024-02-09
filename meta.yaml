@@ -1,18 +1,14 @@
-{% set name = "jr-trapezoid" %}
-{% set version = "0.0.1a" %}
+{% set pyproject = load_file_data('pyproject.toml') %}
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: jr-trapezoid
+  version: {{ pyproject["project"]['version'] }}
 
 source:
-  url: https://github.com/jorgenriseth/jr-trapezoid/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 1f3f761ae2fcfd40724fe3ff370baad781e0c8f4b5c7b3b43e6aa47db56318a4
+  path: .
 
 build:
-  noarch: python
   script: python -m pip install --no-deps --ignore-installed . -vv
-  number: 0
 
 requirements:
   host:
@@ -21,18 +17,22 @@ requirements:
     - pip
   run:
     - python
-    - numpy
+    # dependencies are defined in pyproject.toml
+    {% for dep in pyproject["project"]["dependencies"] %}
+    - {{ dep.lower() }}
+    {% endfor %}
 
 test:
-  imports:
-    - jr_trapezoid
-  commands:
-    - pip check
+  source_files:
+    - tests
   requires:
-    - pip
+    - pytest
+    - pytest-cov
+  commands:
+    - pytest
 
 about:
   home: https://github.com/jorgenriseth/jr-trapezoid
-  license: MIT
+  license: {{ pyproject.get('license') }}
   license_file: LICENSE
 
