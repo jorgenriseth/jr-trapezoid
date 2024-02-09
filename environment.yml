@@ -7,4 +7,3 @@ dependencies:
   - setuptools
   - pytest
   - numpy
-  - nptyping

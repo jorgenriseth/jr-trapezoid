@@ -1,5 +1,5 @@
 {% set name = "jr-trapezoid" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.1a" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jorgenriseth/jr-trapezoid/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: aa3655d1db431682dab0ca749e08f376c8185f07881eee79f65c3428d3127629
+  sha256: 1f3f761ae2fcfd40724fe3ff370baad781e0c8f4b5c7b3b43e6aa47db56318a4
 
 build:
   noarch: python
