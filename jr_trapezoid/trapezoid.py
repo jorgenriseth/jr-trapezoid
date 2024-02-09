@@ -1,7 +1,7 @@
 from typing import Any, Callable
 
 import numpy as np
-from nptyping import NDArray, Shape
+from nptyping import Floating, NDArray, Shape
 
 
 def trapezoid(f: Callable[[float], float], a: float, b: float, N: int) -> float:
@@ -15,7 +15,7 @@ def trapezoid(f: Callable[[float], float], a: float, b: float, N: int) -> float:
 
 
 def numpy_trapezoid(
-    f: Callable[[NDArray[Shape["*"], float]], NDArray[Shape["*", float]]],
+    f: Callable[[NDArray[Shape["*"], Any]], NDArray[Shape["*"], Any]],
     a: float,
     b: float,
     N: int,
