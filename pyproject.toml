@@ -1,6 +1,12 @@
-version = "0.0.1"
+[project]
 name = "jr-trapezoid"
-authors = [{name = "Jørgen Riseth", email="jnriseth@gmail.com"}]
+version = "0.0.1"
+authors = [
+    {name = "Jørgen Riseth", email="jnriseth@gmail.com"}
+]
+dependencies = [
+    "numpy"
+]
 
 
 [build-system]

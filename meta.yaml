@@ -1,0 +1,38 @@
+{% set name = "jr-trapezoid" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/jorgenriseth/jr-trapezoid/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: aa3655d1db431682dab0ca749e08f376c8185f07881eee79f65c3428d3127629
+
+build:
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed . -vv
+  number: 0
+
+requirements:
+  host:
+    - 'python >=3.7'
+    - setuptools 
+    - pip
+  run:
+    - python
+    - numpy
+
+test:
+  imports:
+    - jr_trapezoid
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/jorgenriseth/jr-trapezoid
+  license: MIT
+  license_file: LICENSE
+
