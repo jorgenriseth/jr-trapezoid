@@ -1,0 +1,8 @@
+version = "0.0.1"
+name = "jr-trapezoid"
+authors = [{name = "Jørgen Riseth", email="jnriseth@gmail.com"}]
+
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"

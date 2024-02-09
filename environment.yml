@@ -1,0 +1,10 @@
+name: packaging
+channels:
+  - conda-forge
+  - default
+dependencies:
+  - pip
+  - setuptools
+  - pytest
+  - numpy
+  - nptyping
